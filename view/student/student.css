@@ -1,0 +1,166 @@
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Arial', sans-serif;
+    background-color: #ffffff;
+    color: #333;
+    line-height: 1.6;
+  }
+
+  h1 {
+    font-size: 24px;
+    color: #444;
+  }
+  .logo {
+    width: 120px;
+  }
+  
+
+
+  .user-actions {
+    display: flex;
+    align-items: center;
+  }
+  
+  /* Navigation */
+.navbar {
+    display: flex;
+    background-color: #767680 12%;
+    padding: 10px;
+    gap: -20px;
+
+  
+}
+.nav-btn {
+    border: none;
+    background: none;
+    cursor: pointer;
+    font-size: 14px;
+    color: #444;
+    outline: none;
+    padding: 3px 20px;
+    box-sizing: border-box;
+    margin: 0 5px; /* Optional: add spacing between buttons */
+    transition: color 0.3s ease, background-color 0.3s ease;
+
+}
+
+.nav-btn.profile-btn{
+    flex: 0;
+    border: none;
+    background: none;
+    cursor: pointer;
+    font-size: 16px;
+    color: #444;
+    outline: none;
+    padding: 3px 20px;
+    transition: color 0.3s ease;
+    margin-left: 192px;
+    margin-right: 50px;
+    white-space: nowrap;
+}
+.nav-btn.requests-btn{
+    flex: 0;
+    border: none;
+    background: none;
+    cursor: pointer;
+    font-size: 16px;
+    color: #444;
+    outline: none;
+    white-space: nowrap;
+    padding: 3px 20px;
+    transition: color 0.3s ease;
+    margin-left: 120px;
+}
+.nav-btn.notifications-btn{
+    margin-left: 150px;
+    padding: 2px 20px;
+    
+}
+.nav-btn:hover {
+    border-bottom: 2px solid #007bff;
+}
+
+.nav-btn.active {
+    border-bottom: 2px solid #007bff;
+}
+
+.tab-content {
+    display: none;
+  }
+  .tab-content.active {
+    display: block;
+  }
+  /* Push the buttons down by adding margin to the container */
+.navbar.mt-5 {
+    margin-top: 50px; /* Adjust this value to push it further down */
+  }
+  
+  /* Ensure the buttons align centrally and maintain consistent spacing */
+  .nav-btn {
+    margin: 10px; /* Optional: Add spacing around buttons */
+  }
+  /* Adjust spacing for form under navbar buttons */
+.deposer-section {
+    margin-top: 20px; /* Space between navbar and form */
+    margin-bottom: 40px; /* Space at the bottom of the form */
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Ensure alignment and responsiveness */
+  .deposer-section form {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  @media (max-width: 768px) {
+    .deposer-section {
+      margin-top: 10px;
+      margin-bottom: 20px;
+      padding: 15px;
+    }
+  }
+
+ /* Navbar Buttons Container */
+.navbar-buttons-container {
+    position: fixed;
+    top: 20px; /* Adjust to match header height */
+    left: 0;
+    right: 0;
+    z-index: 1020; /* Ensure it stays above other content */
+    background-color: #f8f9fa;
+    padding: 10px 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for separation */
+    display: flex;
+    justify-content: center;
+    gap: 10px; /* Equal spacing between buttons */
+  }
+  
+  /* Content Below Navbar Buttons */
+  /* Content Below Navbar Buttons */
+.content {
+    margin-top: 140px; /* Adjust this based on header + buttons navbar height */
+  }
+  
+  /* Form Section */
+  .deposer-section {
+    margin-top:100px; /* Space between buttons navbar and form */
+    margin-bottom: 40px; /* Space at the bottom of the form */
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .deposer-section form {
+    max-width: 600px;
+    margin: 0 auto; /* Center the form */
+  }

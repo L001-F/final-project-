@@ -1,0 +1,825 @@
+/* General Body Styling */
+body {
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+  display: flex;
+  height: 100vh;
+  background-color: #f0f4f8; /* Soft background for a clean look */
+  position: relative;
+}
+
+/* Sidebar Styling */
+.sidebar {
+  width: 70px; /* Default width (collapsed) */
+  background-color: #1e2a47; /* Deep blue for a fresh, modern feel */
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: fixed;
+  height: 100%;
+  padding: 20px 0;
+  z-index: 10;
+  transition: width 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Brand Styling (Hat icon + Text) */
+.sidebar .brand {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  font-weight: 600;
+  color: #8794d4; /* Soft blue for a cute touch */
+  transition: color 0.3s ease;
+  overflow: hidden; /* Hide the text when collapsed */
+}
+
+.sidebar .brand i {
+  font-size: 24px;
+  margin-right: 8px;
+}
+
+.sidebar .brand span {
+  display: none; /* Hide text by default */
+}
+
+/* Menu Styling */
+.sidebar .menu {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  margin-top: 30px;
+}
+
+/* Menu Item Styling */
+.sidebar .menu a {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  text-decoration: none;
+  color: white;
+  padding: 12px;
+  border-radius: 8px;
+  margin-bottom: 12px;
+  font-size: 16px; /* Smaller text size */
+  width: 100%;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s ease;
+}
+
+/* Hover Effect */
+.sidebar .menu a:hover {
+  background-color: #3c4f8c; /* Soft blue for hover */
+  transform: scale(1.05); /* Slight scale effect on hover */
+}
+
+/* Active Item Styling */
+.sidebar .menu a.active {
+  background-color: #8794d4; /* Soft blue for active item */
+  color: #1e2a47; /* Dark blue text */
+  font-weight: 600;
+}
+
+/* Icon Styling */
+.sidebar .menu a i {
+  font-size: 20px;
+  margin-right: 12px;
+}
+
+/* Show Text on Hover */
+.sidebar .menu a span {
+  display: none; /* Hidden text by default */
+  margin-left: 10px;
+  font-size: 14px; /* Smaller text size */
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+/* Expand Sidebar on Hover */
+.sidebar:hover {
+  width: 180px; /* Expands the sidebar */
+  box-shadow: 4px 0 15px rgba(0, 0, 0, 0.2); /* Soft shadow */
+}
+
+/* Show the text when sidebar is expanded */
+.sidebar:hover .menu a span {
+  display: inline-block;
+  opacity: 1;
+}
+
+/* Show brand text when expanded */
+.sidebar:hover .brand span {
+  display: inline-block; /* Show text */
+}
+
+/* Footer Styling */
+.sidebar .footer {
+  border-top: 1px solid #cccccc;
+  padding-top: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.sidebar .footer i {
+  font-size: 20px;
+  margin-right: 10px;
+  color: #b0b0b0;
+}
+
+.sidebar .footer p {
+  margin: 0;
+  color: #b0b0b0;
+}
+
+/* Smooth Section Transitions */
+.section {
+  display: none;
+  padding: 30px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+  margin-bottom: 30px;
+  width: 85%;
+  max-width: 1100px;
+  margin-left: auto;
+  margin-right: auto;
+  opacity: 0;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* Active Section */
+.section.active {
+  display: block;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .sidebar {
+      width: 60px; /* Smaller for mobile */
+  }
+
+  .sidebar:hover {
+      width: 150px; /* Expands more for mobile */
+  }
+
+  .sidebar .menu a {
+      padding: 10px;
+      font-size: 14px; /* Smaller font size for mobile */
+  }
+}
+
+
+/* Section Styles */
+/* Section Styles */
+.section {
+  display: none;
+  padding: 30px; /* Increase padding for more space inside */
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0px 2px 12px rgba(0, 0, 0, 0.1);
+ 
+  width: 90%; /* Adjust width to occupy more space (90% of parent) */
+
+margin-top: 5%;
+
+margin-left: 10%;
+position: absolute; /* Position absolutely within the body */
+  transform: translate(-50%, -50%); /* Offset the element by half its width and height to center it */
+  z-index: 5; /* Ensure it stays above other content */
+}
+
+
+.section.active {
+  display: block;
+}
+
+/* Page Title */
+.page-title {
+  text-align: center;
+  font-size: 32px;
+  font-weight: bold;
+  color: #1d3557;
+  margin-bottom: 40px;
+}
+
+/* Profile Container */
+.profile-container {
+  background-color: #fff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  padding: 40px;
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+  border-top: 5px solid #1e80b7;
+}
+
+.profile-header {
+  margin-bottom: 25px;
+}
+
+.profile-photo {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 5px solid #4d80b0;
+  margin-bottom: 20px;
+}
+
+.profile-name {
+  font-size: 26px;
+  color: #1d3557;
+  font-weight: bold;
+  margin-bottom: 12px;
+}
+
+.profile-id {
+  font-size: 14px;
+  color: #777;
+}
+
+.profile-info {
+  margin-top: 30px;
+  text-align: left;
+}
+
+.info-item {
+  margin-bottom: 20px;
+  font-size: 18px;
+  color: #333;
+}
+
+.info-item label {
+  font-weight: bold;
+  color: #1e80b7;
+}
+
+.info-item span {
+  font-size: 16px;
+  color: #555;
+}
+
+/* Table Styles */
+table {
+  width: 100%;
+  margin-top: 20px;
+  border-collapse: collapse;
+}
+
+table th, table td {
+  padding: 12px;
+  text-align: center;
+  border: 1px solid #ddd;
+}
+
+table th {
+  background-color: #1e80b7;
+  color: white;
+  font-weight: bold;
+}
+
+table tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+table tr:hover {
+  background-color: #f1f1f1;
+}
+
+/* Form Controls */
+.form-control {
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  padding: 10px;
+}
+
+.form-group label {
+  font-size: 16px;
+  color: #1d3557;
+}
+
+.form-group input, 
+.form-group select, 
+.form-group textarea {
+  width: 100%;
+  margin-top: 10px;
+  padding: 10px;
+}
+
+.form-group textarea {
+  resize: vertical;
+}
+
+/* Buttons */
+.btn-success {
+  background-color: #1e80b7;
+  border-color: #1e80b7;
+  color: white;
+}
+
+/* Filters Container Styling */
+.filters-container {
+  display: flex;
+  gap: 10px; /* Reduce gap for tighter layout */
+  align-items: center; /* Center items vertically */
+  justify-content: space-between; /* Evenly space out items */
+  background-color: #f9fafc;
+  padding: 10px 15px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  width: 100%; /* Ensure it fits the width */
+  box-sizing: border-box;
+  overflow: hidden; /* Prevent horizontal scrolling */
+}
+
+/* Individual Filter Group */
+.filters-container .filter-group {
+  flex: 1 1 140px; /* Make the filters even more flexible */
+  display: flex;
+  flex-direction: column;
+  min-width: 120px; /* Smaller minimum width */
+  max-width: 180px; /* Restrict max width */
+  margin-bottom: 0;
+}
+
+/* Label Styling */
+.filters-container label {
+  font-weight: 600;
+  color: #1e3557;
+  margin-bottom: 4px; /* Reduced margin */
+  font-size: 12px; /* Smaller font size */
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  text-align: center; /* Center-align labels */
+}
+
+/* Inputs and Dropdown Styling */
+.filters-container select,
+.filters-container input[type="date"] {
+  border: 1px solid #1e80b7;
+  border-radius: 6px; /* Smaller border radius */
+  padding: 6px 10px; /* Reduced padding */
+  font-size: 12px; /* Smaller font size for compactness */
+  color: #1d3557;
+  background-color: #fff;
+  transition: all 0.3s ease-in-out;
+  text-align: center; /* Center text in inputs */
+}
+
+/* Hover and Focus Effects */
+.filters-container select:hover,
+.filters-container input[type="date"]:hover,
+.filters-container select:focus,
+.filters-container input[type="date"]:focus {
+  border-color: #155d7d;
+  box-shadow: 0 0 6px rgba(30, 128, 183, 0.3);
+  outline: none;
+  transform: scale(1.02);
+}
+
+/* Dropdown Options Styling */
+.filters-container select option {
+  color: #1d3557;
+  background-color: #f9fafc;
+  padding: 8px; /* Reduced padding in dropdown */
+}
+
+/* Responsive Design Adjustments */
+@media (max-width: 768px) {
+  .filters-container {
+    flex-wrap: wrap; /* Stack items vertically when screen space is tight */
+    gap: 8px; /* Reduced gap for small screens */
+  }
+  .filters-container .filter-group {
+    max-width: 100%; /* Allow filters to take full width on small screens */
+  }
+}
+/* Table Container */
+.table-container {
+width: 100%;
+max-width: 1200px; /* Maximum width of the container */
+padding: 20px;
+background-color: #f9f9f9;
+border-radius: 10px;
+margin-top: 30px;
+box-sizing: border-box;
+display: block;
+overflow-x: hidden;
+margin-left: auto;
+margin-right: auto;
+}
+
+/* Table Layout */
+.table {
+width: 100%;
+table-layout: auto; /* Allow columns to grow based on content */
+border-collapse: collapse;
+background-color: #fff;
+box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+border-radius: 10px;
+overflow-x: auto; /* Allow horizontal scrolling if necessary */
+}
+
+.table th,
+.table td {
+padding: 12px 15px; /* Adjust padding for text to fit better */
+text-align: left;
+font-size: 14px;
+color: #444;
+white-space: normal; /* Allow text to wrap instead of overflow */
+word-wrap: break-word; /* Ensure long text wraps properly */
+}
+
+/* Table Header */
+.table th {
+background-color: #f8f9fa;
+color: #007bff;
+font-weight: bold;
+text-transform: uppercase;
+}
+
+/* Table Hover Effect */
+.table tr:hover {
+background-color: #f1f1f1;
+}
+
+/* Action Icons Column */
+.table td.action-icons {
+display: flex;
+justify-content: center;
+align-items: center;
+gap: 15px;
+}
+
+/* Edit and Delete Icons */
+.table .edit-icon,
+.table .delete-icon {
+font-size: 18px;
+color: #007bff;
+cursor: pointer;
+transition: color 0.3s ease;
+display: inline-block;
+}
+
+.table .edit-icon:hover {
+color: #0056b3;
+transform: scale(1.1);
+}
+
+.table .delete-icon:hover {
+color: #dc3545;
+transform: scale(1.1);
+}
+
+/* Tooltip Styling */
+.table .edit-icon:before,
+.table .delete-icon:before {
+content: attr(title);
+position: absolute;
+left: 50%;
+bottom: 30px;
+transform: translateX(-50%);
+background-color: #333;
+color: #fff;
+font-size: 12px;
+padding: 5px;
+border-radius: 4px;
+visibility: hidden;
+opacity: 0;
+transition: opacity 0.3s ease;
+}
+
+.table .edit-icon:hover:before,
+.table .delete-icon:hover:before {
+visibility: visible;
+opacity: 1;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+.table {
+  display: block;
+  overflow-x: auto;
+}
+
+.table thead {
+  display: none;
+}
+
+.table tr {
+  display: block;
+  margin-bottom: 15px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  padding: 10px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+}
+
+.table td {
+  display: block;
+  text-align: right;
+  font-size: 16px;
+  padding-left: 40%;
+  position: relative;
+}
+
+.table td::before {
+  content: attr(data-label);
+  position: absolute;
+  left: 10px;
+  top: 10px;
+  font-weight: bold;
+  color: #007bff;
+}
+
+.table .action-icons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+}
+}
+
+
+/* Search Bar Styling */
+.search-bar {
+  position: relative;
+  width: 100%;
+  max-width: 600px;
+  margin: 20px auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f0f0f0;
+  padding: 8px 10px;
+  border-radius: 40px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+.search-bar input {
+  width: 100%;
+  padding: 12px 20px 12px 35px;
+  border: 2px solid #ddd;
+  border-radius: 40px;
+  outline: none;
+  font-size: 14px;
+  background-color: #fff;
+  color: #444;
+}
+
+.search-bar input:focus {
+  border-color: #007bff;
+  background-color: #eaf7ff;
+  box-shadow: 0 0 10px rgba(0, 123, 255, 0.3);
+}
+
+.search-bar .search-icon {
+  position: absolute;
+  right: 15px;
+  font-size: 20px;
+  color: #bbb;
+  pointer-events: none;
+  transition: color 0.3s ease;
+}
+
+.search-bar input:focus + .search-icon {
+  color: #007bff;
+}
+
+/* Overall container for the search bar */
+.search-bar {
+position: relative;
+width: 100%;
+max-width: 380px; /* Smaller width */
+margin: 25px auto;
+display: flex;
+justify-content: center;
+align-items: center;
+background-color: #f0f0f0;
+padding: 8px 10px;
+border-radius: 40px; /* Round edges */
+box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+transition: all 0.3s ease-in-out;
+cursor: pointer;
+}
+
+/* Hover effect on the whole search bar */
+.search-bar:hover {
+transform: scale(1.08);
+box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+/* Search input styling */
+.search-bar input {
+width: 100%;
+padding: 12px 20px 12px 35px; /* Adjust padding for icon on the right */
+border: 2px solid #ddd;
+border-radius: 40px;
+outline: none;
+font-size: 14px;
+background-color: #fff;
+color: #444;
+transition: all 0.3s ease-in-out;
+transition-delay: 0.2s;
+}
+
+/* Input field focus effect */
+.search-bar input:focus {
+border-color: #007bff;
+background-color: #eaf7ff;
+box-shadow: 0 0 10px rgba(0, 123, 255, 0.3); /* Added glow effect */
+}
+
+/* Placeholder styling */
+.search-bar input::placeholder {
+color: #bbb;
+transition: color 0.3s ease-in-out;
+}
+
+/* Placeholder color on focus */
+.search-bar input:focus::placeholder {
+color: #007bff;
+}
+
+/* Icon inside the input field, positioned on the right */
+.search-bar .search-icon {
+position: absolute;
+right: 15px; /* Move the icon to the right */
+font-size: 20px;
+color: #bbb;
+pointer-events: none; /* Prevent icon from blocking input */
+transition: all 0.3s ease-in-out;
+}
+
+/* When the input field is focused, change icon color */
+.search-bar input:focus + .search-icon {
+color: #007bff;
+transform: translateX(-5px); /* Slight movement on focus */
+}
+
+/* Icon hover effect */
+.search-bar .search-icon:hover {
+color: #007bff;
+transform: scale(1.2) rotate(360deg); /* Icon hover effect with scaling */
+}
+
+/* Adding a slight pulse effect when clicked */
+.search-bar.clicked {
+animation: pulse 0.6s ease-out forwards;
+}
+
+@keyframes pulse {
+0% {
+  transform: scale(1.1);
+}
+50% {
+  transform: scale(1.05);
+}
+100% {
+  transform: scale(1);
+}
+}
+
+/* Search Section Styling */
+#Search\ Student {
+  background-color: #fff;
+  padding: 40px;
+  border-radius: 8px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  max-width: 700px;
+  width: 100%;
+  margin: 50px auto;
+  border: 1px solid #eee;
+}
+
+h1 {
+  font-size: 2.5em;
+  color: #333;
+  margin-bottom: 15px;
+  font-weight: 600;
+}
+
+p {
+  color: #666;
+  font-size: 1.1em;
+  margin-bottom: 20px;
+}
+
+/* Search Bar Container Styling */
+.search-bar-container {
+  margin-top: 30px;
+  margin-left: 200px;
+}
+
+.search-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  
+}
+
+/* Search Input with Icon */
+.search-input {
+  display: flex;
+  align-items: center;
+  position: relative;
+  width: 80%;
+  background-color: #f9f9f9;
+  border-radius: 50px;
+  padding: 10px;
+  border: 1px solid #ddd;
+}
+
+.search-input i {
+  position: absolute;
+  left: 15px;
+  color: #aaa;
+  font-size: 18px;
+}
+
+.search-input input {
+  padding: 12px 18px 12px 35px; /* Added padding to make space for the icon */
+  font-size: 1.1em;
+  width: 100%;
+  border: none;
+  outline: none;
+  background-color: transparent;
+  border-radius: 50px;
+  transition: border 0.3s ease;
+}
+
+.search-input input:focus {
+  border: 1px solid #00aaff;
+}
+
+/* Submit Button */
+.search-form button {
+  padding: 12px 20px;
+  background-color: #00aaff;
+  color: #fff;
+  border: none;
+  border-radius: 50px;
+  font-size: 1.1em;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-left: 10px;
+}
+
+.search-form button:hover {
+  background-color: #0066cc;
+}
+
+/* Table Styling */
+.results-table {
+  width: 100%;
+  margin-top: 30px;
+  border-collapse: collapse;
+}
+
+.results-table th, .results-table td {
+  padding: 12px 18px;
+  text-align: left;
+  font-size: 1.1em;
+}
+
+.results-table th {
+  background-color: #f1f1f1;
+  color: #333;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.results-table tbody tr:nth-child(even) {
+  background-color: #fafafa;
+}
+
+.results-table tbody tr:hover {
+  background-color: #f0f0f0;
+}
+
+.results-table td {
+  color: #444;
+}
+
+.results-table td:hover {
+  color: #00aaff;
+  font-weight: 600;
+}
+
+/* No Results Found Styling */
+.results-table p {
+  text-align: center;
+  font-size: 1.2em;
+  color: #888;
+  font-weight: 600;
+}
